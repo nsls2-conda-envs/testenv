@@ -112,19 +112,11 @@ jobs:
       - name: contents of the env .yml file
         shell: bash -l {0}
         run: |
-          # For reference: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html.
-          set -vxeuo pipefail
-
-          echo "::group::env .yml file content"
           cat artifacts/${CONDA_PACK_ENV_NAME}.yml
-          echo "::endgroup::"
 
       - name: checksum files
         shell: bash -l {0}
         run: |
-          # For reference: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html.
-          set -vxeuo pipefail
-
           cat artifacts/*sum.txt
 
       # https://github.com/actions/upload-artifact
